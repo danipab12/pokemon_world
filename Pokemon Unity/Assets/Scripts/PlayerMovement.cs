@@ -3,6 +3,7 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement player;
@@ -1157,8 +1158,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (accessedMapSettings.getEncounterList(encounterLocation).Length > 0)
         {
-            if (Random.value <= accessedMapSettings.getEncounterProbability())
+            
+            
+            if (danielsolar() <= accessedMapSettings.getEncounterProbability())
             {
+
+                print("Hello World!"+ accessedMapSettings.getEncounterProbability());// lo puse 
                 if (setCheckBusyWith(Scene.main.Battle.gameObject))
                 {
                     BgmHandler.main.PlayOverlay(Scene.main.Battle.defaultWildBGM,
@@ -1185,6 +1190,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public float danielsolar()
+    {
+        float r, a, b, c, d ;
+        a = Random.value;
+        b = Random.value;
+        c = Random.value;
+        d = Random.value;
+        b %= a + c;
+        d *= b - a;
+        r = b + d;
+        return r;
+    }
+
     private void playClip(AudioClip clip)
     {
         PlayerAudio.clip = clip;
@@ -1203,3 +1221,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+
