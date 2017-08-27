@@ -1162,8 +1162,6 @@ public class PlayerMovement : MonoBehaviour
             
             if (danielsolar() <= accessedMapSettings.getEncounterProbability())
             {
-
-                print("Hello World!"+ accessedMapSettings.getEncounterProbability());// lo puse 
                 if (setCheckBusyWith(Scene.main.Battle.gameObject))
                 {
                     BgmHandler.main.PlayOverlay(Scene.main.Battle.defaultWildBGM,
